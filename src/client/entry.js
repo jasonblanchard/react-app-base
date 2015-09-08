@@ -3,17 +3,11 @@ import React from 'react';
 import Router from 'react-router';
 import routes from '../shared/routes';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import app from '../shared/reducers/reducer';
+import configureStore from '../shared/configureStore';
 
 const initialState = JSON.parse(document.getElementById('init-data').value);
 
-const createStoreWithMiddleware = applyMiddleware(
-    thunkMiddleware
-)(createStore);
-
-const store = createStoreWithMiddleware(app, initialState);
+const store = configureStore(initialState);
 
 console.log(store.getState());
 
