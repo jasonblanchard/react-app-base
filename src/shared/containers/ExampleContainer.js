@@ -10,6 +10,7 @@ class ExampleContainer extends Component {
   render() {
     return (
       <div>
+        <h2>Example Connected Component</h2>
         <ExampleChild {...this.props} />
       </div>
     );

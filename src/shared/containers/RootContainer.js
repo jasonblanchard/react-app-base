@@ -1,20 +1,21 @@
 import React from 'react';
-import { RouteHandler, Link } from 'react-router';
+import { Link } from 'react-router';
 
 export default class RootContainer extends React.Component {
   render() {
-    return(
+    return (
       <div>
-        <h1><Link to='app'>App</Link></h1>
+        <h1><Link to="/">App</Link></h1>
 
         <nav>
           <ul>
-            <li><Link to='about'>About</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/hello/world">Hello</Link></li>
           </ul>
         </nav>
 
         <div>
-          <RouteHandler {...this.props} />
+          {this.props.children}
         </div>
       </div>
     );
