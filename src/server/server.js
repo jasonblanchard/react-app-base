@@ -1,4 +1,6 @@
 import 'babel/polyfill';
+import jwt from 'jsonwebtoken';
+import cookieParser from 'cookie-parser';
 import express from 'express';
 import exphbs from 'express-handlebars';
 import bodyParser from 'body-parser';
@@ -16,13 +18,13 @@ import routes from '../shared/routes';
 import { renderToString } from 'react-dom/server'
 */
 
-let data = initialState;
-
 // const router = Router.create({
 //  routes: routes,
 // });
 
 const app = express();
+
+app.use(cookieParser());
 
 app.use(express.static('public'));
 
@@ -31,8 +33,56 @@ app.use(bodyParser.json());
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+const users = [
+  {
+    id: 1,
+    username: 'jason',
+    password: 'testpass',
+  },
+];
+
+const SECRET = 'sekret';
+
+app.post('/api/session', (req, res) => {
+  const { username, password } = req.body.credentials;
+  const user = users.find(reqUser => reqUser.username === username);
+
+  if ((user) && (user.password === password)) {
+    // Create token and add it to cookie
+    const token = jwt.sign({id: user.id}, SECRET);
+
+    res.cookie('token', token, {
+      httpOnly: true,
+    });
+
+    res.json({
+      currentUser: user,
+    });
+  } else {
+    res.clearCookie('token');
+    res.json({error: 'not logged in :('});
+  }
+});
+
+app.delete('/api/session', (req, res) => {
+  res.clearCookie('token');
+  res.end();
+});
+
 app.get('/*', (req, res) => {
-  const store = configureStore(initialState);
+
+  let data = initialState;
+
+  // Check token and include current user in initial state
+  console.log(req.cookies.token);
+  if (req.cookies.token) {
+    const userId = jwt.verify(req.cookies.token, SECRET).id;
+    const currentUser = users.find(user => user.id === Number(userId));
+
+    data = Object.assign({}, data, {currentUser});
+  }
+
+  const store = configureStore(data);
 
   /*
 
