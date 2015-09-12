@@ -6,21 +6,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import configureStore from '../shared/configureStore';
 import initialState from './fixtures/initialStateFixture';
-
-/*
-import { createLocation } from 'history'
-import RoutingContext from 'react-router/lib/RoutingContext'
-import Router from 'react-router'
-import { match } from 'react-router'
 import routes from '../shared/routes';
-import { renderToString } from 'react-dom/server'
-*/
+import createLocation from 'history/lib/createLocation';
+import { RoutingContext, match } from 'react-router';
 
 let data = initialState;
-
-// const router = Router.create({
-//  routes: routes,
-// });
 
 const app = express();
 
@@ -34,37 +24,25 @@ app.set('view engine', 'handlebars');
 app.get('/*', (req, res) => {
   const store = configureStore(initialState);
 
-  /*
+  const location = createLocation(req.url);
 
-  let location = createLocation(req.url)
+  match({ routes, location }, (error, redirectLocation, renderProps) => {
+    if (redirectLocation) {
+      res.redirect(301, redirectLocation.pathname + redirectLocation.search);
+    } else if (error) {
+      res.status(500).send(error.message);
+    } else if (renderProps === null) {
+      res.status(404).send('Not found');
+    } else {
+      const markup = React.renderToString(
+        <Provider store={store}>
+          {() => <RoutingContext {...renderProps}/>}
+        </Provider>
+      );
 
-  match(routes, location, (err, props, redirectInfo) => {
-    const markup = renderToString(
-      <Provider store={store}>
-      {() => 
-        <RoutingContext {...props} />
-      }
-      </Provider>
-    );
+      res.render('index', {markup: markup, initialState: JSON.stringify(data)});
+    }
   });
-
-  res.render('index', {markup: markup, initialState: JSON.stringify(data)});
-
-  /*
-  Router.run(routes, req.url, (Handler) => {
-    const markup = React.renderToString(
-      <Provider store={store}>
-        {() => <Handler router={router} />}
-      </Provider>
-    );
-
-    res.render('index', {markup: markup, initialState: JSON.stringify(data)});
-  });
-  */
-
-  const markup = '';
-
-  res.render('index', {markup: markup, initialState: JSON.stringify(data)});
 });
 
 app.listen('8080');

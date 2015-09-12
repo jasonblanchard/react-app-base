@@ -4,9 +4,9 @@ import routes from '../shared/routes';
 import { Provider } from 'react-redux';
 import configureStore from '../shared/configureStore';
 import { Router } from 'react-router';
-import { createHistory } from 'history';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
-const history = createHistory();
+const history = createBrowserHistory();
 
 const initialState = JSON.parse(document.getElementById('init-data').value);
 
@@ -16,11 +16,7 @@ console.log(store.getState());
 
 React.render(
   <Provider store={store}>
-  {() =>
-    <Router history={history}>
-      {routes}
-    </Router>
-  }
+    {() => <Router history={history} routes={routes} />}
   </Provider>,
   document.getElementById('app')
 );
