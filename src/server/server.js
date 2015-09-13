@@ -1,4 +1,5 @@
 import 'babel/polyfill';
+import env from '../../env.json';
 import express from 'express';
 import exphbs from 'express-handlebars';
 import bodyParser from 'body-parser';
@@ -9,6 +10,8 @@ import initialState from './fixtures/initialStateFixture';
 import routes from '../shared/routes';
 import createLocation from 'history/lib/createLocation';
 import { RoutingContext, match } from 'react-router';
+
+const config = env[process.env.NODE_ENV || 'development'];
 
 let data = initialState;
 
@@ -40,7 +43,11 @@ app.get('/*', (req, res) => {
         </Provider>
       );
 
-      res.render('index', {markup: markup, initialState: JSON.stringify(data)});
+      res.render('index', {
+        markup: markup,
+        initialState: JSON.stringify(data),
+        scriptSource: config.SCRIPT_SOURCE,
+      });
     }
   });
 });
