@@ -10,7 +10,8 @@
     "web-server": "nodemon build/server/server",
     "dev-server": "node build/server/webpack",
     "lint": "./node_modules/eslint-watch/bin/esw src/ -w; exit 0",
-    "start": "npm run watch-js & npm run dev-server & npm run web-server"
+    "start": "npm run watch-js & npm run dev-server & npm run web-server",
+    "build": "npm run lint & webpack --config webpack.config.production.js"
   },
   "author": "",
   "license": "ISC",
