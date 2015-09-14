@@ -12,8 +12,6 @@ const initialState = JSON.parse(document.getElementById('init-data').value);
 
 const store = configureStore(initialState);
 
-console.log(store.getState());
-
 React.render(
   <Provider store={store}>
     {() => <Router history={history} routes={routes} />}

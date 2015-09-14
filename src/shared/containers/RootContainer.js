@@ -1,5 +1,10 @@
 import React from 'react';
+import { PropTypes } from 'react';
 import { Link } from 'react-router';
+
+const propTypes = {
+  children: PropTypes.node,
+};
 
 export default class RootContainer extends React.Component {
   render() {
@@ -21,3 +26,5 @@ export default class RootContainer extends React.Component {
     );
   }
 }
+
+RootContainer.propTypes = propTypes;

@@ -13,7 +13,7 @@ import { RoutingContext, match } from 'react-router';
 
 const config = env[process.env.NODE_ENV || 'development'];
 
-let data = initialState;
+const data = initialState;
 
 const app = express();
 
