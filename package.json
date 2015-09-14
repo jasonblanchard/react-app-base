@@ -7,7 +7,7 @@
     "test": "mocha --recursive --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
     "watch-js": "babel src -d build --experimental -w ",
-    "web-server": "nodemon build/server/server",
+    "web-server": "nodemon build/server/index",
     "dev-server": "node build/server/webpack",
     "lint": "./node_modules/eslint-watch/bin/esw src/ -w; exit 0",
     "start": "npm run watch-js & npm run dev-server & npm run web-server",
