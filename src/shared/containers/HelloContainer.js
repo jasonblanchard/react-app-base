@@ -9,7 +9,7 @@ const propTypes = {
 export default class Hello extends React.Component {
   render() {
     return (
-      <AnnounceableDocumentTitle title="hello">
+      <AnnounceableDocumentTitle title={`hello ${this.props.params.name}`}>
         <div>
           Hello, {this.props.params.name}!
         </div>

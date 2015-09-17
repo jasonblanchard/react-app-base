@@ -45,15 +45,16 @@ app.get('/*', (req, res) => {
         </Provider>
       );
 
+      const documentTitle = AnnounceableDocumentTitle.rewind();
+
       res.render('index', {
         markup: markup,
         initialState: JSON.stringify(data),
         scriptSource: config.SCRIPT_SOURCE,
+        documentTitle: documentTitle,
       });
     }
   });
-
-  AnnounceableDocumentTitle.rewind();
 });
 
 app.listen(PORT);

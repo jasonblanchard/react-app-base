@@ -11,7 +11,7 @@ export default class RootContainer extends React.Component {
   render() {
     return (
       <div>
-        <A11yToolkitAnnouncer />  
+        <A11yToolkitAnnouncer />
 
         <h1><Link to="/">App</Link></h1>
 
