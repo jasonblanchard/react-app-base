@@ -3,19 +3,19 @@ import { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { actions } from '../actions/actions';
-import { AnnounceableDocumentTitle } from 'react-announceable-document-title';
+import { AnnounceDocTitle } from 'react-announce-doc-title';
 import ExampleChild from '../components/ExampleChild';
 
 class ExampleContainer extends Component {
 
   render() {
     return (
-      <AnnounceableDocumentTitle title="Example Smart Container - React App">
+      <AnnounceDocTitle title="Example Smart Container - React App">
         <div>
           <h2>Example Connected Component</h2>
           <ExampleChild {...this.props} />
         </div>
-      </AnnounceableDocumentTitle>
+      </AnnounceDocTitle>
     );
   }
 }

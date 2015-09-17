@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { A11yToolkitAnnouncer } from 'react-announceable-document-title';
+import { A11yToolkitAnnouncer } from 'react-announce-doc-title';
 
 const propTypes = {
   children: PropTypes.node,

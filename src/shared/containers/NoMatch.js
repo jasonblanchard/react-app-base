@@ -1,14 +1,14 @@
 import React from 'react';
-import { AnnounceableDocumentTitle } from 'react-announceable-document-title';
+import { AnnounceDocTitle } from 'react-announce-doc-title';
 
 export default class NoMatch extends React.Component {
   render() {
     return (
-      <AnnounceableDocumentTitle title="Not Found">
+      <AnnounceDocTitle title="Not Found">
         <div>
           404 :(
         </div>
-      </AnnounceableDocumentTitle>
+      </AnnounceDocTitle>
     );
   }
 }
