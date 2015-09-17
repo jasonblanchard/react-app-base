@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'react';
+import { AnnounceableDocumentTitle } from 'react-announceable-document-title';
 
 const propTypes = {
   name: PropTypes.string,
@@ -8,9 +9,11 @@ const propTypes = {
 export default class Hello extends React.Component {
   render() {
     return (
-      <div>
-        Hello, {this.props.params.name}!
-      </div>
+      <AnnounceableDocumentTitle title="hello">
+        <div>
+          Hello, {this.props.params.name}!
+        </div>
+      </AnnounceableDocumentTitle>
     );
   }
 }

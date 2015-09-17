@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { A11yToolkitAnnouncer } from 'react-announceable-document-title';
 
 const propTypes = {
   children: PropTypes.node,
@@ -10,6 +11,8 @@ export default class RootContainer extends React.Component {
   render() {
     return (
       <div>
+        <A11yToolkitAnnouncer />  
+
         <h1><Link to="/">App</Link></h1>
 
         <nav>

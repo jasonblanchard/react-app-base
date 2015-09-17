@@ -10,6 +10,7 @@ import initialState from './fixtures/initialStateFixture';
 import routes from '../shared/routes';
 import createLocation from 'history/lib/createLocation';
 import { RoutingContext, match } from 'react-router';
+import { AnnounceableDocumentTitle } from 'react-announceable-document-title';
 
 const config = env[process.env.NODE_ENV || 'development'];
 const PORT = process.env.PORT || 8080;
@@ -51,6 +52,8 @@ app.get('/*', (req, res) => {
       });
     }
   });
+
+  AnnounceableDocumentTitle.rewind();
 });
 
 app.listen(PORT);
