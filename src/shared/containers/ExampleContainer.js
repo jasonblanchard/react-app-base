@@ -10,7 +10,7 @@ class ExampleContainer extends Component {
 
   render() {
     return (
-      <AnnounceableDocumentTitle title="Example Smart Container">
+      <AnnounceableDocumentTitle title="Example Smart Container - React App">
         <div>
           <h2>Example Connected Component</h2>
           <ExampleChild {...this.props} />

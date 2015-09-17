@@ -4,7 +4,7 @@ import { AnnounceableDocumentTitle } from 'react-announceable-document-title';
 export default class About extends React.Component {
   render() {
     return (
-      <AnnounceableDocumentTitle title="about">
+      <AnnounceableDocumentTitle title="About - React App">
         <div>
           Arrr, me matey
         </div>
