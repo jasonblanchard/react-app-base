@@ -19,6 +19,7 @@ export default class RootContainer extends React.Component {
           <ul>
             <li><Link to="/about" activeClassName="active">About</Link></li>
             <li><Link to="/hello/world" activeClassName="active">Hello</Link></li>
+            <li><Link to="/settings" activeClassName="active">Settings</Link></li>
           </ul>
         </nav>
 
