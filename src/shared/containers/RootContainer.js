@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { A11yToolkitAnnouncer } from 'react-announce-doc-title';
+import { A11yAnnouncer } from 'react-router-doc-title';
 
 const propTypes = {
   children: PropTypes.node,
@@ -11,7 +11,7 @@ export default class RootContainer extends React.Component {
   render() {
     return (
       <div>
-        <A11yToolkitAnnouncer />
+        <A11yAnnouncer />
 
         <h1><Link to="/">App</Link></h1>
 

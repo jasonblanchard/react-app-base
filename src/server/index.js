@@ -10,7 +10,7 @@ import initialState from './fixtures/initialStateFixture';
 import routes from '../shared/routes';
 import createLocation from 'history/lib/createLocation';
 import { RoutingContext, match } from 'react-router';
-import { AnnounceDocTitle } from 'react-announce-doc-title';
+import { getDocTitleFromRenderProps } from 'react-router-doc-title';
 
 const config = env[process.env.NODE_ENV || 'development'];
 const PORT = process.env.PORT || 8080;
@@ -32,6 +32,9 @@ app.get('/*', (req, res) => {
   const location = createLocation(req.url);
 
   match({ routes, location }, (error, redirectLocation, renderProps) => {
+
+    const documentTitle = getDocTitleFromRenderProps(renderProps);
+
     if (redirectLocation) {
       res.redirect(301, redirectLocation.pathname + redirectLocation.search);
     } else if (error) {
@@ -44,8 +47,6 @@ app.get('/*', (req, res) => {
           {() => <RoutingContext {...renderProps}/>}
         </Provider>
       );
-
-      const documentTitle = AnnounceDocTitle.rewind();
 
       res.render('index', {
         markup: markup,

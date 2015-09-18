@@ -9,13 +9,13 @@ import TopLevelPageContainer from './containers/TopLevelPageContainer';
 import NestedChild from './components/NestedChild';
 
 export default (
-  <Route path="/" component={RootContainer}>
-    <Route path="/about" component={AboutContainer} />
-    <Route path="/hello/:name" component={HelloContainer} />
-    <Route path="/settings" component={TopLevelPageContainer}>
-      <Route path="section" component={NestedChild} />
+  <Route path="/" component={RootContainer} docTitle="Home">
+    <Route path="/about" component={AboutContainer} docTitle="about"/>
+    <Route path="/hello/:name" component={HelloContainer} docTitle="hello"/>
+    <Route path="/settings" component={TopLevelPageContainer} docTitle="settings">
+      <Route path="section" component={NestedChild} docTitle="inner settings"/>
     </Route>
-    <IndexRoute component={ExampleContainer} />
+    <IndexRoute component={ExampleContainer} docTitle="index"/>
     <Route path="*" component={NoMatch}/>
   </Route>
 );
