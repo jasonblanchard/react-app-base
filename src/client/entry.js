@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import configureStore from '../shared/configureStore';
 import { Router } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
+import a11y from 'react-a11y';
+
+a11y(React);
 
 const history = createBrowserHistory();
 

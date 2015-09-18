@@ -10,6 +10,9 @@ import initialState from './fixtures/initialStateFixture';
 import routes from '../shared/routes';
 import createLocation from 'history/lib/createLocation';
 import { RoutingContext, match } from 'react-router';
+import a11y from 'react-a11y';
+
+//a11y(React);
 
 const config = env[process.env.NODE_ENV || 'development'];
 const PORT = process.env.PORT || 8080;
