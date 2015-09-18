@@ -12,6 +12,7 @@ import createLocation from 'history/lib/createLocation';
 import { RoutingContext, match } from 'react-router';
 
 const config = env[process.env.NODE_ENV || 'development'];
+const PORT = process.env.PORT || 8080;
 
 const data = initialState;
 
@@ -52,4 +53,4 @@ app.get('/*', (req, res) => {
   });
 });
 
-app.listen('8080');
+app.listen(PORT);
