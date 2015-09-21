@@ -16,6 +16,6 @@ export default (
       <Route path="section" component={NestedChild} />
     </Route>
     <IndexRoute component={ExampleContainer} docTitle="index"/>
-    <Route path="*" component={NoMatch}/>
+    <Route path="*" component={NoMatch} docTitle="Not Found"/>
   </Route>
 );
