@@ -29,6 +29,7 @@
     "react-dom": "^0.14.0-beta3",
     "react-redux": "^2.0.0",
     "react-router": "^1.0.0-rc1",
+    "react-router-doc-title":"jasonblanchard/react-router-doc-title",
     "redux": "^2.0.0",
     "redux-thunk": "^0.1.0",
     "webpack": "^1.11.0",
