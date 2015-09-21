@@ -13,7 +13,7 @@ export default (
     <Route path="/about" component={AboutContainer} docTitle="about"/>
     <Route path="/hello/:name" component={HelloContainer} docTitle="hello"/>
     <Route path="/settings" component={TopLevelPageContainer} docTitle="settings">
-      <Route path="section" component={NestedChild} docTitle="inner settings"/>
+      <Route path="section" component={NestedChild} />
     </Route>
     <IndexRoute component={ExampleContainer} docTitle="index"/>
     <Route path="*" component={NoMatch}/>

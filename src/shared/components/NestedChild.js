@@ -1,6 +1,13 @@
 import React from 'react';
+import { transitionComputedDocTitle } from 'react-router-doc-title';
+import siteTitleConfig from '../../config/siteTitle';
 
 export default class NestedChild extends React.Component {
+
+  componentDidMount() {
+    transitionComputedDocTitle('computed title', siteTitleConfig);
+  }
+
   render() {
     return (
       <div>

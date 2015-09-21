@@ -11,6 +11,7 @@ import routes from '../shared/routes';
 import createLocation from 'history/lib/createLocation';
 import { RoutingContext, match } from 'react-router';
 import { getDocTitleFromRenderProps } from 'react-router-doc-title';
+import siteTitleConfig from '../config/siteTitle';
 
 const config = env[process.env.NODE_ENV || 'development'];
 const PORT = process.env.PORT || 8080;
@@ -32,8 +33,7 @@ app.get('/*', (req, res) => {
   const location = createLocation(req.url);
 
   match({ routes, location }, (error, redirectLocation, renderProps) => {
-
-    const documentTitle = getDocTitleFromRenderProps(renderProps);
+    const documentTitle = getDocTitleFromRenderProps(renderProps, siteTitleConfig);
 
     if (redirectLocation) {
       res.redirect(301, redirectLocation.pathname + redirectLocation.search);
