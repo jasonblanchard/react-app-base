@@ -3,6 +3,7 @@ import { Component, PropTypes } from 'react';
 
 const propTypes = {
   someValues: PropTypes.array,
+  errorMessage: PropTypes.string,
 };
 
 export default class ExampleChild extends Component {
@@ -16,8 +17,8 @@ export default class ExampleChild extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { addSomeValue } = this.props;
-    addSomeValue(this.state.value);
+    const { addValueAsync } = this.props;
+    addValueAsync(this.state.value);
     this.setState({value: ''});
     React.findDOMNode(this.refs.value).focus();
   }
@@ -29,6 +30,9 @@ export default class ExampleChild extends Component {
   render() {
     return (
       <div>
+        <div>
+          {this.props.errorMessage}
+        </div>
         I am a child component. I can access someValues: {this.props.someValues.join(', ')}
         <br />
         <form onSubmit={this.handleSubmit}>

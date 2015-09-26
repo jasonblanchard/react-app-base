@@ -20,12 +20,14 @@ class ExampleContainer extends Component {
 function mapStateToProps(state) {
   return {
     someValues: state.someValues,
+    errorMessage: state.errorMessage,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   const actionMapping = {
     addSomeValue: actions.addSomeValue,
+    addValueAsync: actions.addValueAsync,
   };
 
   return bindActionCreators(actionMapping, dispatch);
