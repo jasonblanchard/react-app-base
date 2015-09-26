@@ -1,4 +1,4 @@
 node_modules/*
-!node_moduls/app
+!node_modules/app
 .DS_Store
 *.swp
