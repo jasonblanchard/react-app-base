@@ -1,14 +1,8 @@
-export const actionConstants = {
-  ADD_SOME_VALUE: 'ADD_SOME_VALUE',
-};
+import actionConstants from 'app/shared/actions/constants';
 
-function addSomeValue(value) {
+export function addSomeValue(value) {
   return {
     type: actionConstants.ADD_SOME_VALUE,
     value,
   };
 }
-
-export const actions = {
-  addSomeValue: addSomeValue,
-};

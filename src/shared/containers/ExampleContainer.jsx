@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { actions } from 'app/shared/actions/actions';
+import * as actions from 'app/shared/actions/actions';
 import ExampleChild from 'app/shared/components/ExampleChild';
 
 class ExampleContainer extends Component {

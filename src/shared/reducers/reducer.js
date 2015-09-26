@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { actionConstants } from 'app/shared/actions/actions';
+import actionConstants from 'app/shared/actions/constants';
 
 function someValues(state = [], action) {
   switch (action.type) {
