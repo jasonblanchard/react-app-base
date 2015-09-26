@@ -6,10 +6,10 @@
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
-    "babel": "./node_modules/babel/bin/babel.js src -d build --experimental",
+    "babel": "./node_modules/babel/bin/babel.js src -d app --experimental",
     "babel:watch": "npm run babel -- -w ",
-    "server:web": "nodemon build/server/index",
-    "server:webpack": "node build/server/webpack",
+    "server:web": "nodemon app/server/index",
+    "server:webpack": "node app/server/webpack",
     "lint": "./node_modules/eslint-watch/bin/esw src/",
     "lint:watch": "npm run lint -- -w; exit 0",
     "start": "npm run babel:watch & npm run server:web & npm run server:webpack",
@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "app": "0.0.1",
     "body-parser": "^1.13.3",
     "exphbs": "^1.0.1",
     "express": "^4.13.3",

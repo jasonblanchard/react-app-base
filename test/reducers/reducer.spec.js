@@ -1,6 +1,6 @@
 import expect from 'expect';
-import app from '../../src/shared/reducers/reducer';
-import { actionConstants } from '../../src/shared/actions/actions';
+import app from 'app/shared/reducers/reducer';
+import { actionConstants } from 'app/shared/actions/actions';
 
 describe('App reducer', () => {
   it('should handle initial state', () => {

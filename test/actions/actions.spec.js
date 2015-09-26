@@ -1,5 +1,5 @@
 import expect from 'expect';
-import { actionConstants, actions } from '../../src/shared/actions/actions';
+import { actionConstants, actions } from 'app/shared/actions/actions';
 
 describe('actions', () => {
   it('addSomeValue should create ADD_SOME_VALUE action', () => {

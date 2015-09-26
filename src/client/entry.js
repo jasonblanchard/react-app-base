@@ -1,8 +1,8 @@
 import 'babel/polyfill';
 import React from 'react';
-import routes from '../shared/routes';
+import routes from 'app/shared/routes';
 import { Provider } from 'react-redux';
-import configureStore from '../shared/configureStore';
+import configureStore from 'app/shared/configureStore';
 import { Router } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 
