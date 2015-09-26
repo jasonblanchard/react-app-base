@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --compilers js:babel-core/register",
+    "test": "./node_modules/mocha/bin/mocha --recursive --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
     "babel": "./node_modules/babel/bin/babel.js src -d app --experimental",
     "babel:watch": "npm run babel -- -w ",
