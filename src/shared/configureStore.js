@@ -4,7 +4,6 @@ import app from 'app/shared/reducers/reducer';
 import promiseMiddleware from 'redux-promise';
 import errorReduxMiddleware from '../shared/utilities/errorReduxMiddleware.js';
 import createLogger from 'redux-logger';
-import app from '../shared/reducers/reducer';
 
 const logger = createLogger();
 

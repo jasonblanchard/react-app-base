@@ -1,7 +1,8 @@
 import { createAction } from 'redux-actions';
 
-const addSomeValue = createAction('ADD_SOME_VALUE');
-const addValueAsync = createAction('ADD_VALUE_ASYNC', (value) => {
+export const addSomeValue = createAction('ADD_SOME_VALUE');
+
+export const addValueAsync = createAction('ADD_VALUE_ASYNC', (value) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (value === 'cats') {
@@ -13,10 +14,4 @@ const addValueAsync = createAction('ADD_VALUE_ASYNC', (value) => {
   });
 });
 
-const setError = createAction('SET_ERROR');
-
-export const actions = {
-  addSomeValue,
-  addValueAsync,
-  setError,
-};
+export const setError = createAction('SET_ERROR');
