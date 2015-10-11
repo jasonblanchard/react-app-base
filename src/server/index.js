@@ -4,6 +4,7 @@ import express from 'express';
 import exphbs from 'express-handlebars';
 import bodyParser from 'body-parser';
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
 import configureStore from 'app/shared/configureStore';
 import initialState from 'app/server/fixtures/initialStateFixture';
@@ -38,9 +39,9 @@ app.get('/*', (req, res) => {
     } else if (renderProps === null) {
       res.status(404).send('Not found');
     } else {
-      const markup = React.renderToString(
+      const markup = ReactDOMServer.renderToString(
         <Provider store={store}>
-          {() => <RoutingContext {...renderProps}/>}
+          <RoutingContext {...renderProps}/>
         </Provider>
       );
 

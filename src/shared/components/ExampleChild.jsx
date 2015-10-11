@@ -19,7 +19,7 @@ export default class ExampleChild extends Component {
     const { addSomeValue } = this.props;
     addSomeValue(this.state.value);
     this.setState({value: ''});
-    React.findDOMNode(this.refs.value).focus();
+    this.refs.value.focus();
   }
 
   handleChange(e) {
