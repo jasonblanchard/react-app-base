@@ -12,8 +12,9 @@
     "server:webpack": "webpack-dev-server --host localhost --port 8082 --content-base public --history-api-fallback --hot --inline --progress",
     "lint": "./node_modules/eslint-watch/bin/esw src/",
     "lint:watch": "npm run lint -- -w; exit 0",
+    "start": "NODE_ENV=production node app/server/index.js",
     "start:dev": "npm run babel:watch & npm run server:web & npm run server:webpack",
-    "build": "npm run lint & ./node_modules/webpack/bin/webpack.js & npm run babel",
+    "build": "npm run lint & ./node_modules/webpack/bin/webpack.jsc & npm run babel",
     "postinstall": "npm run build"
   },
   "author": "",

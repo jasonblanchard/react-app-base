@@ -3,8 +3,6 @@ var webpack = require('webpack');
 
 var hot = / --hot/.test(process.env.npm_lifecycle_script);
 
-console.log("HOT", hot);
-
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
