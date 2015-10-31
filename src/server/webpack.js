@@ -5,7 +5,7 @@ import config from '../../webpack.config.dev';
 const server = new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
-  stats: false,
+  stats: true,
 });
 
 server.listen(8081, 'localhost', function listen() {});
