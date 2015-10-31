@@ -9,11 +9,11 @@
     "babel": "./node_modules/babel/bin/babel.js src -d app --experimental",
     "babel:watch": "npm run babel -- -w ",
     "server:web": "nodemon app/server/index",
-    "server:webpack": "webpack-dev-server --host localhost --port 8082 --content-base public --history-api-fallback --hot --progress --config webpack.config.dev.js",
+    "server:webpack": "webpack-dev-server --host localhost --port 8082 --content-base public --history-api-fallback --hot --inline --progress",
     "lint": "./node_modules/eslint-watch/bin/esw src/",
     "lint:watch": "npm run lint -- -w; exit 0",
     "start:dev": "npm run babel:watch & npm run server:web & npm run server:webpack",
-    "build": "npm run lint & ./node_modules/webpack/bin/webpack.js --config webpack.config.production.js & npm run babel",
+    "build": "npm run lint & ./node_modules/webpack/bin/webpack.js & npm run babel",
     "postinstall": "npm run build"
   },
   "author": "",

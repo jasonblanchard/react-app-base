@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import 'babel/polyfill';
 import env from '../../env.json';
 import express from 'express';
@@ -54,4 +56,5 @@ app.get('/*', (req, res) => {
   });
 });
 
+console.log(`listening on port ${PORT}`);
 app.listen(PORT);

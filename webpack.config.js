@@ -1,11 +1,13 @@
 /* eslint-disable */
 var webpack = require('webpack');
 
+var hot = / --hot/.test(process.env.npm_lifecycle_script);
+
+console.log("HOT", hot);
+
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:8082',
-     'webpack/hot/only-dev-server',
      './src/client/entry',
   ],
   output: {
@@ -17,10 +19,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: [
-          'react-hot',
-          'babel-loader?experimental'
-        ],
+        loader: (hot ? 'react-hot!' : '') + 'babel',
         exclude: /node_modules/
       },
       {
