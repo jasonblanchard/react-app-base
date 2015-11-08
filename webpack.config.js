@@ -1,5 +1,6 @@
 /* eslint-disable */
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var hot = / --hot/.test(process.env.npm_lifecycle_script);
 
@@ -13,6 +14,9 @@ module.exports = {
     filename: 'app.js',
     publicPath: 'http://localhost:8082/js/'
   },
+  plugins: [
+    new ExtractTextPlugin("style.css", { allChunks: true })
+  ],
   module: {
     loaders: [
       {
@@ -23,7 +27,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         loaders: [
-          'style',
+          ExtractTextPlugin.extract('style'),
           'css',
           'autoprefixer?{"browsers":["> 5%","last 2 versions","ie 8"]}',
           'sass?includePaths[]=./node_modules'

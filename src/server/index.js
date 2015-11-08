@@ -51,6 +51,7 @@ app.get('/*', (req, res) => {
         markup: markup,
         initialState: JSON.stringify(data),
         scriptSource: config.SCRIPT_SOURCE,
+        styleSource: config.STYLE_SOURCE,
       });
     }
   });
