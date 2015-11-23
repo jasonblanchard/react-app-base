@@ -1,10 +1,10 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
-import RootContainer from 'app/shared/containers/RootContainer';
-import AboutContainer from 'app/shared/containers/AboutContainer';
-import ExampleContainer from 'app/shared/containers/ExampleContainer';
-import HelloContainer from 'app/shared/containers/HelloContainer';
-import NoMatch from 'app/shared/containers/NoMatch.js';
+import RootContainer from 'app/containers/RootContainer';
+import AboutContainer from 'app/containers/AboutContainer';
+import ExampleContainer from 'app/containers/ExampleContainer';
+import HelloContainer from 'app/containers/HelloContainer';
+import NoMatch from 'app/containers/NoMatch';
 
 export default (
   <Route path="/" component={RootContainer}>
