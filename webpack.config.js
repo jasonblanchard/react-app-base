@@ -6,7 +6,7 @@ var hot = / --hot/.test(process.env.npm_lifecycle_script);
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-     './src/client/entry',
+     './app/client/entry',
   ],
   output: {
     path: __dirname + '/public/js',
@@ -32,6 +32,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   },
 }

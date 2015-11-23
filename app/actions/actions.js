@@ -1,4 +1,4 @@
-import actionConstants from 'app/shared/actions/constants';
+import actionConstants from 'app/actions/constants';
 
 export function addSomeValue(value) {
   return {

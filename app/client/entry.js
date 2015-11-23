@@ -1,9 +1,9 @@
 import 'babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import routes from 'app/shared/routes';
+import routes from 'app/routes';
 import { Provider } from 'react-redux';
-import configureStore from 'app/shared/configureStore';
+import configureStore from 'app/configureStore';
 import { Router } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import '../scss/site.scss';

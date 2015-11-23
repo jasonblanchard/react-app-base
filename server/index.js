@@ -1,16 +1,15 @@
 /* eslint-disable no-console */
 
-import 'babel/polyfill';
-import env from '../../env.json';
+import env from '../env.json';
 import express from 'express';
 import exphbs from 'express-handlebars';
 import bodyParser from 'body-parser';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
-import configureStore from 'app/shared/configureStore';
-import initialState from 'app/server/fixtures/initialStateFixture';
-import routes from 'app/shared/routes';
+import configureStore from 'app/configureStore';
+import initialState from './fixtures/initialStateFixture';
+import routes from 'app/routes';
 import createLocation from 'history/lib/createLocation';
 import { RoutingContext, match } from 'react-router';
 
