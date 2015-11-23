@@ -6,13 +6,10 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
-    "babel": "./node_modules/babel/bin/babel.js src -d app --experimental",
-    "babel:watch": "npm run babel -- -w ",
     "server:web": "nodemon --exec babel-node server/index",
     "server:webpack": "webpack-dev-server --host localhost --port 8082 --content-base public --history-api-fallback --hot --inline --progress",
     "lint": "./node_modules/eslint-watch/bin/esw src/",
     "lint:watch": "npm run lint -- -w; exit 0",
-    "start": "NODE_ENV=production node app/server/index.js",
     "start:dev": "npm run server:web & npm run server:webpack",
     "build": "npm run lint & ./node_modules/webpack/bin/webpack.jsc & npm run babel",
     "postinstall": "npm run build"
