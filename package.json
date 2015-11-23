@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
+    "build:server": "babel server -d build/server --experimental && cp ./env.json build/server/",
     "server:web": "nodemon --exec babel-node server/index",
     "server:webpack": "webpack-dev-server --host localhost --port 8082 --content-base public --history-api-fallback --hot --inline --progress",
     "lint": "esw src/",
