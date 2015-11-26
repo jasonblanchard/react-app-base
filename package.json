@@ -6,12 +6,15 @@
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-core/register",
     "test:watch": "npm test -- --watch",
-    "build:server": "babel server -d build/server --experimental && cp ./env.json build/server/",
+    "build:server": "babel server -d build/server --experimental && cp ./env.json build/ && cp -R ./views build && cp -R public build/",
+    "build:app": "babel app -d build/app --experimental",
+    "build": "npm run build:server && npm run build:app",
     "server:web": "nodemon --exec babel-node server/index",
     "server:webpack": "webpack-dev-server --host localhost --port 8082 --content-base public --history-api-fallback --hot --inline --progress",
     "lint": "esw src/",
-    "lint:watch": "npm run lint -- -w; exit 0",
+    "lint:w atch": "npm run lint -- -w; exit 0",
     "start:dev": "npm run server:web & npm run server:webpack",
+    "start": "NODE_ENV=production node build/server/index.js",
     "postinstall": "npm run build"
   },
   "author": "",
