@@ -58,6 +58,10 @@ if (!hot) {
           test: /\.json$/,
           loader: 'json'
         },
+        {
+          test: /\.s?css$/,
+          loader: 'null'
+        }
       ]
     },
     resolve: {
