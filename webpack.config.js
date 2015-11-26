@@ -1,6 +1,4 @@
 /* eslint-disable */
-var webpack = require('webpack');
-
 var hot = / --hot/.test(process.env.npm_lifecycle_script);
 
 var configs = [
