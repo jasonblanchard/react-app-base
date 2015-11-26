@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080;
 
 let page;
 if (process.env.NODE_ENV === 'production') {
-  page = require('./page.generated');
+  page = require('./page.compiled');
 } else {
   page = require('./page');
 }
