@@ -17,7 +17,22 @@ var configs = [
     plugins: [
       new ExtractTextPlugin("style.css", { allChunks: true })
     ],
+    sasslint: {
+      configFile: '.sass-lint.yml'
+    },
     module: {
+      preLoaders: [
+        {
+          test: /\.(js|jsx)$/,
+          loader: 'eslint',
+          include: path.join(__dirname, 'app')
+        },
+        {
+          test: /\.s?css$/,
+          loader: 'sasslint',
+          include: path.join(__dirname, 'app')
+        }
+      ],
       loaders: [
         {
           test: /\.jsx?$/,

@@ -9,7 +9,9 @@ export default class ExampleChild extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {value: ''};
+    this.state = {
+      value: '',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -18,12 +20,16 @@ export default class ExampleChild extends Component {
     e.preventDefault();
     const { addSomeValue } = this.props;
     addSomeValue(this.state.value);
-    this.setState({value: ''});
+    this.setState({
+      value: '',
+    });
     this.refs.value.focus();
   }
 
   handleChange(e) {
-    this.setState({[e.target.id]: e.target.value});
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
   }
 
   render() {

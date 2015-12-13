@@ -3,10 +3,10 @@ import actionConstants from 'app/actions/constants';
 
 function someValues(state = [], action) {
   switch (action.type) {
-  case actionConstants.ADD_SOME_VALUE:
-    return [...state, action.value];
-  default:
-    return state;
+    case actionConstants.ADD_SOME_VALUE:
+      return [...state, action.value];
+    default:
+      return state;
   }
 }
 
