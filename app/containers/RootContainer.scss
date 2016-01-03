@@ -1,7 +1,7 @@
 @import 'app/scss/settings';
 
 .RootContainer-headerWrapper {
-  background: $theme-dark-accent-color;
+  background: $theme-medium-color;
   display: flex;
   justify-content: space-between;
   padding: 8px;
@@ -25,13 +25,13 @@
 
   a {
     &:hover {
-      border-bottom: 2px solid $theme-medium-color;
+      border-bottom: 2px solid $theme-link-color;
       text-decoration: none;
     }
   }
 
   .active {
-    border-bottom: 4px solid $theme-medium-color;
+    border-bottom: 4px solid $theme-link-color;
   }
 }
 
