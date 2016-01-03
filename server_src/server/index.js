@@ -26,7 +26,7 @@ app.set('view engine', 'handlebars');
 
 app.get('/*', (req, res) => {
   if (process.env.NODE_ENV === 'production') {
-    page(req, res);
+    page.default(req, res);
   } else {
     res.render('index', {
       markup: '',

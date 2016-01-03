@@ -3,6 +3,7 @@ import { Component, PropTypes } from 'react';
 
 const propTypes = {
   someValues: PropTypes.array,
+  addSomeValue: PropTypes.func,
 };
 
 export default class ExampleChild extends Component {
