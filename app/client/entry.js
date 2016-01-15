@@ -7,8 +7,6 @@ import { Router } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import '../scss/site.scss';
 
-const somethingElse = 'asdf';
-
 const history = createBrowserHistory();
 
 const initialState = JSON.parse(document.getElementById('init-data').value);
