@@ -11,7 +11,6 @@ const history = createBrowserHistory();
 
 const initialState = JSON.parse(document.getElementById('init-data').value);
 
-// const store = configureStore(initialState);
 let store = configureStore(initialState);
 
 ReactDOM.render(
